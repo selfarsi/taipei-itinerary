@@ -6,178 +6,184 @@
 <title>Six Hearts · Taipei 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#F0EAE2;--accent:#7D2044;--accent-deep:#5E1630;--accent-soft:rgba(125,32,68,.08);--accent-tint:rgba(125,32,68,.05);
-  --taupe:#6A5A50;--text:#261C16;--card:#FFFFFF;--border:#D4C5B6;--radius:16px;
-  --shadow:0 4px 24px rgba(38,28,22,.09);
-  --font-head:'DM Serif Display',serif;--font-body:'Plus Jakarta Sans',sans-serif;
+  --primary:#D4A574;--primary-dark:#B8915C;--primary-light:#E8C9B0;
+  --accent:#2D5047;--accent-light:#3D7070;--accent-soft:rgba(45,80,71,.08);
+  --accent-tint:rgba(212,165,116,.05);
+  --cream:#FEFDFB;--text:#1A1410;--text-light:#5C4E42;
+  --card:#FFFBF5;--border:#E8D5C4;--border-light:#F5E8DE;
+  --radius:12px;--shadow:0 8px 32px rgba(45,80,71,.12);
+  --shadow-sm:0 4px 16px rgba(45,80,71,.08);
+  --font-display:'Playfair Display',serif;
+  --font-body:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text);line-height:1.65;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:var(--accent);text-decoration:none}
 button{font-family:var(--font-body);cursor:pointer}
 
 /* ── NAVBAR ── */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,234,226,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-.navbar.scrolled{box-shadow:0 2px 20px rgba(38,28,22,.1)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
-.nav-logo{font-family:var(--font-head);font-size:1rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;white-space:nowrap}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--taupe);transition:color .25s;position:relative}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .3s}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,253,251,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light);transition:box-shadow .3s;box-shadow:0 2px 16px rgba(45,80,71,.06)}
+.navbar.scrolled{box-shadow:0 4px 28px rgba(45,80,71,.15)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-family:var(--font-display);font-size:.95rem;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase;white-space:nowrap;font-weight:600}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--primary);transition:width .3s}
 .nav-links a:hover{color:var(--accent)}
 .nav-links a:hover::after{width:100%}
 .hamburger{display:none;background:none;border:none;padding:8px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;transition:.3s}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(240,234,226,.97);backdrop-filter:blur(14px);padding:20px 24px 28px;border-bottom:1px solid var(--border);z-index:999}
+.hamburger span{display:block;width:22px;height:2px;background:var(--accent);margin:5px 0;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(254,253,251,.97);backdrop-filter:blur(16px);padding:20px 24px 28px;border-bottom:1px solid var(--border);z-index:999}
 .mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:12px 0;font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.mobile-menu a{display:block;padding:14px 0;font-size:.85rem;font-weight:600;color:var(--text);letter-spacing:.8px;text-transform:uppercase;border-bottom:1px solid var(--border-light)}
 .mobile-menu a:last-child{border:none}
 
 /* ── HERO ── */
-.hero{padding:140px 24px 60px;text-align:center;max-width:820px;margin:0 auto}
-.hero-badge{display:inline-block;padding:8px 20px;border:1px solid var(--border);border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:24px;background:var(--card)}
-.hero-title{font-family:var(--font-head);font-size:clamp(2.4rem,6vw,4rem);color:var(--text);line-height:1.1;margin-bottom:16px;text-wrap:balance}
-.hero-sub{font-size:1.05rem;color:var(--taupe);font-weight:300;line-height:1.7;max-width:560px;margin:0 auto 40px}
+.hero{padding:160px 24px 80px;text-align:center;max-width:900px;margin:0 auto}
+.hero-badge{display:inline-block;padding:10px 24px;border:1.5px solid var(--primary);border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:28px;background:rgba(212,165,116,.04)}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,4.2rem);color:var(--accent);line-height:1.15;margin-bottom:18px;text-wrap:balance;font-weight:700}
+.hero-sub{font-size:1.1rem;color:var(--text-light);font-weight:300;line-height:1.8;max-width:620px;margin:0 auto 48px;letter-spacing:.3px}
 
 /* countdown */
-.countdown{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-.cd-box{background:rgba(255,255,255,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.75);border-radius:18px;padding:18px 26px;min-width:104px;box-shadow:0 12px 32px rgba(140,59,43,.12),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -10px 20px rgba(140,59,43,.05)}
-.cd-num{font-family:var(--font-head);font-size:2.3rem;color:var(--accent);line-height:1}
-.cd-label{font-size:.66rem;text-transform:uppercase;letter-spacing:2px;color:var(--taupe);margin-top:8px;font-weight:600}
+.countdown{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.cd-box{background:linear-gradient(135deg,rgba(212,165,116,.08),rgba(61,112,112,.04));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 28px;min-width:110px;box-shadow:0 8px 28px rgba(212,165,116,.1)}
+.cd-num{font-family:var(--font-display);font-size:2.4rem;color:var(--primary);line-height:1;font-weight:700}
+.cd-label{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-light);margin-top:10px;font-weight:700}
 
 /* ── SECTION HELPERS ── */
-.section{padding:80px 24px;max-width:1100px;margin:0 auto}
-.section-label{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
-.section-title{font-family:var(--font-head);font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--text);line-height:1.2;margin-bottom:14px;text-wrap:balance}
-.section-sub{color:var(--taupe);font-weight:300;font-size:.95rem;line-height:1.85;max-width:640px;margin-bottom:40px}
+.section{padding:100px 24px;max-width:1100px;margin:0 auto}
+.section-label{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--primary);font-weight:800;margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);color:var(--accent);line-height:1.2;margin-bottom:16px;text-wrap:balance;font-weight:700}
+.section-sub{color:var(--text-light);font-weight:300;font-size:.98rem;line-height:1.8;max-width:680px;margin-bottom:48px;letter-spacing:.2px}
 
 /* ── STORY ── */
-.story{padding:0 24px 80px;max-width:960px;margin:0 auto}
-.story-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(32px,5vw,56px);box-shadow:var(--shadow);margin-bottom:32px}
-.story-label{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
-.story-subtitle{font-family:var(--font-head);font-size:1.4rem;color:var(--text);margin-bottom:16px;font-style:italic;line-height:1.35}
-.story-text{color:var(--taupe);font-size:.95rem;line-height:1.9;font-weight:300}
-.story-quote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;font-family:var(--font-head);font-style:italic;font-size:1.15rem;color:var(--text);line-height:1.5;background:var(--accent-tint);border-radius:0 12px 12px 0}
+.story{padding:0 24px 100px;max-width:980px;margin:0 auto}
+.story-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(36px,5vw,56px);box-shadow:var(--shadow-sm);margin-bottom:36px}
+.story-label{font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--primary);font-weight:800;margin-bottom:12px}
+.story-subtitle{font-family:var(--font-display);font-size:1.5rem;color:var(--accent);margin-bottom:18px;font-style:italic;line-height:1.35;font-weight:600}
+.story-text{color:var(--text-light);font-size:.95rem;line-height:1.9;font-weight:300}
+.story-quote{border-left:4px solid var(--primary);padding:20px 28px;margin:28px 0;font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:var(--accent);line-height:1.6;background:rgba(212,165,116,.05);border-radius:0 12px 12px 0}
 
 /* stats */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;box-shadow:var(--shadow)}
-.stat-num{font-family:var(--font-head);font-size:2rem;color:var(--accent);line-height:1}
-.stat-text{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--taupe);margin-top:6px;font-weight:500}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.stat-card{background:linear-gradient(135deg,var(--card),rgba(61,112,112,.02));border:1px solid var(--border);border-radius:var(--radius);padding:24px 18px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.stat-num{font-family:var(--font-display);font-size:2.2rem;color:var(--primary);line-height:1;font-weight:700}
+.stat-text{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-top:8px;font-weight:700}
 
 /* ── FLIGHT & BUDGET ── */
-.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding:80px 24px;max-width:1100px;margin:0 auto}
-.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(24px,4vw,40px);box-shadow:var(--shadow)}
-.info-card h3{font-family:var(--font-head);font-size:1.3rem;margin-bottom:20px;color:var(--text)}
+.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;padding:100px 24px;max-width:1100px;margin:0 auto}
+.info-card{background:linear-gradient(135deg,var(--card),rgba(61,112,112,.02));border:1px solid var(--border);border-radius:var(--radius);padding:clamp(28px,4vw,44px);box-shadow:var(--shadow-sm)}
+.info-card h3{font-family:var(--font-display);font-size:1.4rem;margin-bottom:24px;color:var(--accent);font-weight:700}
 .info-card ul{list-style:none;padding:0}
-.info-card li{padding:12px 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--taupe);display:flex;gap:10px;align-items:flex-start;line-height:1.65}
+.info-card li{padding:14px 0;border-bottom:1px solid var(--border-light);font-size:.88rem;color:var(--text-light);display:flex;gap:12px;align-items:flex-start;line-height:1.7}
 .info-card li:last-child{border:none}
-.info-card li strong{color:var(--accent);font-weight:700;min-width:fit-content;text-transform:uppercase;letter-spacing:.3px;font-size:.78rem}
-.time-chip{display:inline-block;padding:2px 10px;border-radius:8px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.78rem;letter-spacing:.5px}
-.time-stamp{font-weight:700;color:var(--text);font-size:.92rem;letter-spacing:.2px}
-.time-meta{display:block;color:var(--taupe);font-size:.8rem;margin-top:4px;letter-spacing:.2px;line-height:1.6;font-weight:400}
-.budget-total{margin-top:16px;padding:16px 20px;background:var(--accent-soft);border-radius:12px;border:1px solid var(--accent)}
-.budget-total span{font-weight:800;color:var(--accent);font-size:1.05rem;letter-spacing:.2px}
+.info-card li strong{color:var(--primary);font-weight:700;min-width:fit-content;text-transform:uppercase;letter-spacing:.4px;font-size:.78rem}
+.time-chip{display:inline-block;padding:3px 12px;border-radius:6px;background:rgba(212,165,116,.12);color:var(--primary);font-weight:700;font-size:.75rem;letter-spacing:.6px}
+.time-stamp{font-weight:600;color:var(--accent);font-size:.92rem;letter-spacing:.3px}
+.time-meta{display:block;color:var(--text-light);font-size:.8rem;margin-top:4px;letter-spacing:.2px;line-height:1.6;font-weight:400}
+.budget-total{margin-top:20px;padding:18px 24px;background:linear-gradient(135deg,rgba(212,165,116,.08),rgba(61,112,112,.04));border-radius:12px;border:1px solid var(--primary)}
+.budget-total span{font-weight:800;color:var(--primary);font-size:1.1rem;letter-spacing:.3px}
 
 /* lottery banner */
-.lottery-banner{max-width:1100px;margin:0 auto 80px;padding:0 24px}
-.lottery-inner{background:linear-gradient(135deg,var(--accent),var(--accent-deep));border-radius:var(--radius);padding:clamp(28px,4vw,44px);color:#fff;position:relative;overflow:hidden}
-.lottery-inner::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%}
-.lottery-inner::after{content:'';position:absolute;bottom:-40px;left:-40px;width:140px;height:140px;background:rgba(255,255,255,.05);border-radius:50%}
-.lottery-inner h3{font-family:var(--font-head);font-size:1.4rem;margin-bottom:10px;position:relative;z-index:1}
-.lottery-inner p{font-size:.9rem;opacity:.92;max-width:600px;line-height:1.7;margin-bottom:20px;position:relative;z-index:1}
-.lottery-btn{display:inline-block;padding:12px 28px;background:#fff;color:var(--accent);font-weight:700;font-size:.85rem;border-radius:100px;letter-spacing:.5px;transition:transform .25s,box-shadow .25s;position:relative;z-index:1}
-.lottery-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.lottery-banner{max-width:1100px;margin:0 auto 100px;padding:0 24px}
+.lottery-inner{background:linear-gradient(135deg,var(--accent),var(--accent-light));border-radius:var(--radius);padding:clamp(36px,5vw,48px);color:#fff;position:relative;overflow:hidden}
+.lottery-inner::before{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:rgba(255,255,255,.08);border-radius:50%}
+.lottery-inner::after{content:'';position:absolute;bottom:-50px;left:-50px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%}
+.lottery-inner h3{font-family:var(--font-display);font-size:1.5rem;margin-bottom:12px;position:relative;z-index:1;font-weight:700}
+.lottery-inner p{font-size:.92rem;opacity:.94;max-width:640px;line-height:1.8;margin-bottom:24px;position:relative;z-index:1}
+.lottery-btn{display:inline-block;padding:13px 32px;background:#fff;color:var(--accent);font-weight:700;font-size:.85rem;border-radius:100px;letter-spacing:.6px;transition:transform .25s,box-shadow .25s;position:relative;z-index:1}
+.lottery-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 /* ── SQUAD ── */
-.squad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.squad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;text-align:center;box-shadow:var(--shadow);transition:transform .3s}
-.squad-card:hover{transform:translateY(-4px)}
-.squad-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-family:var(--font-head);color:#fff;font-weight:600}
-.squad-role{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
-.squad-name{font-family:var(--font-head);font-size:1.1rem;margin-bottom:8px}
-.squad-quote{font-size:.82rem;color:var(--taupe);font-style:italic;line-height:1.6;font-weight:300}
+.squad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.squad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 26px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.squad-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.squad-avatar{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-family:var(--font-display);color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(45,80,71,.15)}
+.squad-role{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--primary);font-weight:800;margin-bottom:6px}
+.squad-name{font-family:var(--font-display);font-size:1.15rem;margin-bottom:10px;color:var(--accent);font-weight:700}
+.squad-quote{font-size:.82rem;color:var(--text-light);font-style:italic;line-height:1.65;font-weight:300}
 
 /* ── ITINERARY ── */
-.itin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.itin-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .3s}
-.itin-card:hover{transform:translateY(-4px)}
-.itin-img{width:100%;height:200px;object-fit:cover;background:linear-gradient(135deg,var(--border),#D5C5B8);position:relative}
-.itin-img-wrap{position:relative;overflow:hidden;height:200px;background:linear-gradient(135deg,var(--border),#D5C5B8);transform:scale(1) rotate(0deg);transform-origin:center;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.itin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.itin-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.itin-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.itin-img-wrap{position:relative;overflow:hidden;height:220px;background:linear-gradient(135deg,var(--border),#E8D5C4);transform:scale(1) rotate(0deg);transform-origin:center;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
 .itin-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
-.itin-card:hover .itin-img-wrap{transform:scale(1.04) rotate(-.6deg)}
-.itin-card:hover .itin-img-wrap img{transform:scale(1.06)}
-.itin-badge{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:1px;padding:5px 12px;border-radius:100px;text-transform:uppercase}
-.itin-body{padding:22px}
-.itin-body h3{font-family:var(--font-head);font-size:1.2rem;margin-bottom:4px;line-height:1.3;text-wrap:balance}
-.itin-loc{font-size:.78rem;color:var(--taupe);margin-bottom:12px;font-weight:500}
+.itin-card:hover .itin-img-wrap{transform:scale(1.05) rotate(-.4deg)}
+.itin-card:hover .itin-img-wrap img{transform:scale(1.08)}
+.itin-badge{position:absolute;top:14px;left:14px;background:var(--primary);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:1.2px;padding:6px 14px;border-radius:100px;text-transform:uppercase;box-shadow:0 4px 12px rgba(212,165,116,.3)}
+.itin-body{padding:26px}
+.itin-body h3{font-family:var(--font-display);font-size:1.25rem;margin-bottom:6px;line-height:1.3;text-wrap:balance;color:var(--accent);font-weight:700}
+.itin-loc{font-size:.8rem;color:var(--text-light);margin-bottom:14px;font-weight:600;letter-spacing:.3px}
 .itin-acts{list-style:none;padding:0;margin-bottom:16px}
-.itin-acts li{font-size:.84rem;color:var(--taupe);padding:4px 0;line-height:1.6;font-weight:400}
-.itin-vibe{font-size:.72rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
-.itin-btn{display:inline-block;padding:8px 18px;border:1.5px solid var(--accent);color:var(--accent);border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.5px;transition:background .25s,color .25s}
-.itin-btn:hover{background:var(--accent);color:#fff}
+.itin-acts li{font-size:.85rem;color:var(--text-light);padding:5px 0;line-height:1.65;font-weight:400}
+.itin-vibe{font-size:.72rem;color:var(--primary);font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px}
+.itin-btn{display:inline-block;padding:9px 20px;border:1.5px solid var(--primary);color:var(--primary);border-radius:100px;font-size:.75rem;font-weight:700;letter-spacing:.6px;transition:background .25s,color .25s}
+.itin-btn:hover{background:var(--primary);color:#fff}
 
 /* vibe tints */
-.vibe-travel{background:linear-gradient(180deg,#F3EBD8 0%,#FFFFFF 40%);border-color:#D4C0A0}
-.vibe-casual{background:linear-gradient(180deg,#EAF0E6 0%,#FFFFFF 40%);border-color:#C0CEBA}
-.vibe-boho{background:linear-gradient(180deg,#F3EAE8 0%,#FFFFFF 40%);border-color:#D4BFB8}
-.vibe-relaxed{background:linear-gradient(180deg,#F0ECEE 0%,#FFFFFF 40%);border-color:#D0C5C8}
-.vibe-sporty{background:linear-gradient(180deg,#F3E6EA 0%,#FFFFFF 40%);border-color:#D4B0B8}
-.vibe-smart{background:linear-gradient(180deg,#F2EAED 0%,#FFFFFF 40%);border-color:#D0C2C8}
-.vibe-travel .itin-badge,.vibe-casual .itin-badge,.vibe-boho .itin-badge,.vibe-relaxed .itin-badge,.vibe-sporty .itin-badge,.vibe-smart .itin-badge{background:var(--accent-deep)}
+.vibe-travel{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
+.vibe-casual{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
+.vibe-boho{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
+.vibe-relaxed{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
+.vibe-sporty{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
+.vibe-smart{background:linear-gradient(180deg,#FFFBF5 0%,#FEFDFB 40%);border-color:var(--border)}
 
 /* ── CHECKLISTS ── */
-.check-section{padding:80px 24px;max-width:900px;margin:0 auto}
+.check-section{padding:100px 24px;max-width:900px;margin:0 auto}
 .checklist{margin-bottom:48px}
-.checklist h3{font-family:var(--font-head);font-size:1.4rem;margin-bottom:20px}
-.check-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.checklist h3{font-family:var(--font-display);font-size:1.4rem;margin-bottom:24px;color:var(--accent);font-weight:700}
+.check-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-light);cursor:pointer;user-select:none;transition:opacity .25s}
+.check-item:hover{opacity:.8}
 .check-item:last-child{border:none}
 .check-input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
-.check-box{width:22px;height:22px;min-width:22px;border:2px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .15s}
-.check-input:checked + .check-box{background:var(--accent);border-color:var(--accent);transform:scale(1.05)}
+.check-box{width:24px;height:24px;min-width:24px;border:2px solid var(--primary);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .15s}
+.check-input:checked + .check-box{background:var(--primary);border-color:var(--primary);transform:scale(1.05)}
 .check-box svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none;opacity:0;transition:opacity .25s}
 .check-input:checked + .check-box svg{opacity:1}
 .check-label{font-size:.9rem;color:var(--text);transition:color .25s}
-.check-input:checked ~ .check-label{color:var(--taupe);text-decoration:line-through}
-.check-input:focus-visible + .check-box{box-shadow:0 0 0 3px var(--accent-soft)}
+.check-input:checked ~ .check-label{color:var(--text-light);text-decoration:line-through}
+.check-input:focus-visible + .check-box{box-shadow:0 0 0 3px rgba(212,165,116,.3)}
 
 /* accordion */
-.accordion-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;cursor:pointer;box-shadow:var(--shadow);transition:box-shadow .3s}
-.accordion-toggle h3{font-family:var(--font-head);font-size:1.15rem}
-.accordion-arrow{width:24px;height:24px;transition:transform .35s;color:var(--accent)}
+.accordion-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 28px;cursor:pointer;box-shadow:var(--shadow-sm);transition:box-shadow .3s;font-family:var(--font-display)}
+.accordion-toggle h3{font-size:1.2rem;color:var(--accent);font-weight:700}
+.accordion-arrow{width:24px;height:24px;transition:transform .35s;color:var(--primary)}
 .accordion-toggle.open .accordion-arrow{transform:rotate(180deg)}
 .accordion-body{max-height:0;overflow:hidden;transition:max-height .45s ease;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius)}
 .accordion-body.open{max-height:800px}
-.accordion-inner{padding:8px 24px 24px}
+.accordion-inner{padding:10px 28px 28px}
 
 /* ── FOOTER ── */
-.footer{text-align:center;padding:60px 24px;border-top:1px solid var(--border);margin-top:40px}
-.footer-text{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--taupe);font-weight:500;line-height:2}
-.footer-hearts{font-size:1.4rem;margin-bottom:8px;color:var(--accent);letter-spacing:6px}
+.footer{text-align:center;padding:70px 24px;border-top:1px solid var(--border);margin-top:60px}
+.footer-text{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:700;line-height:2.2}
+.footer-hearts{font-size:1.5rem;margin-bottom:12px;color:var(--primary);letter-spacing:8px}
 
 /* ── ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .two-col,.itin-grid{grid-template-columns:repeat(2,1fr)}
   .squad-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .nav-links{display:none}
   .hamburger{display:block}
-  .two-col,.itin-grid{grid-template-columns:1fr}
-  .squad-grid{grid-template-columns:1fr}
+  .two-col,.itin-grid,.squad-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
-  .hero{padding:110px 20px 48px}
-  .cd-box{min-width:80px;padding:14px 18px}
-  .cd-num{font-size:1.7rem}
+  .hero{padding:120px 20px 56px}
+  .cd-box{min-width:90px;padding:16px 20px}
+  .cd-num{font-size:1.9rem}
+  .section{padding:80px 24px}
 }
 </style>
 </head>
@@ -186,7 +192,7 @@ button{font-family:var(--font-body);cursor:pointer}
 <!-- ─── NAVBAR ─── -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">SIX HEARTS · TAIPEI</a>
+    <a href="#hero" class="nav-logo">✨ Six Hearts · Taipei</a>
     <ul class="nav-links">
       <li><a href="#story">Our Story</a></li>
       <li><a href="#flights">Flight &amp; Budget</a></li>
@@ -212,8 +218,8 @@ button{font-family:var(--font-body);cursor:pointer}
 <!-- ─── HERO ─── -->
 <header class="hero" id="hero">
   <div class="hero-badge">Manila → Taipei · October 20–25, 2026</div>
-  <h1 class="hero-title">Taipei Itinerary</h1>
-  <p class="hero-sub">Six days. One incredible city. A thousand memories in the making.</p>
+  <h1 class="hero-title">Taipei Escape</h1>
+  <p class="hero-sub">Six days. One extraordinary city. A lifetime of memories together.</p>
   <div class="countdown" id="countdown">
     <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
@@ -225,23 +231,23 @@ button{font-family:var(--font-body);cursor:pointer}
 <section class="story" id="story">
   <!-- Part A -->
   <div class="story-card reveal">
-    <div class="story-label">A Little Moment We'll Never Forget</div>
-    <div class="story-subtitle">Some journeys take us somewhere. This one takes us closer.</div>
-    <p class="story-text">Six friends. One first passport adventure. From late-night planning and airport excitement to street food, mountain sunsets, and stories we'll tell for years, this is more than a holiday. It's a chapter of friendship.</p>
+    <div class="story-label">A Moment We'll Treasure Forever</div>
+    <div class="story-subtitle">Six Hearts. One Adventure. A World of Memories.</div>
+    <p class="story-text">Six women. Six dreams. One unforgettable journey. From the moment we step off that plane to the final sunset over the city, this isn't just a trip—it's a testament to the bond we share. In a world that moves fast, we're choosing to be present, celebrate each other, and create moments that'll echo for years to come.</p>
   </div>
 
   <!-- Part B -->
   <div class="story-card reveal">
-    <div class="story-label">The First Trip Abroad</div>
-    <div class="story-quote">"The best kind of courage is the kind you find when you have your favorite people beside you."</div>
-    <p class="story-text">For the first time, six familiar lives are stepping into an unfamiliar world together. And somehow, that makes the world feel a little less unfamiliar.</p>
+    <div class="story-label">First Passports, First Flight, First Class</div>
+    <div class="story-quote">"Traveling with your sisters in spirit means every moment becomes a masterpiece."</div>
+    <p class="story-text">For the first time, six familiar souls are stepping into an unfamiliar world—together. And there's something magical about that. With each other's company, we transform the unfamiliar into the unforgettable.</p>
   </div>
 
   <!-- Stats -->
   <div class="stats-row reveal">
     <div class="stat-card">
       <div class="stat-num">6</div>
-      <div class="stat-text">Travelers</div>
+      <div class="stat-text">Hearts</div>
     </div>
     <div class="stat-card">
       <div class="stat-num">1</div>
@@ -249,11 +255,11 @@ button{font-family:var(--font-body);cursor:pointer}
     </div>
     <div class="stat-card">
       <div class="stat-num">∞</div>
-      <div class="stat-text">Memories to Make</div>
+      <div class="stat-text">Moments Ahead</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">1st</div>
-      <div class="stat-text">Passport Stamp Together</div>
+      <div class="stat-num">✨</div>
+      <div class="stat-text">Girl Power</div>
     </div>
   </div>
 </section>
@@ -295,46 +301,46 @@ button{font-family:var(--font-body);cursor:pointer}
 
 <!-- ─── SQUAD ─── -->
 <section class="section" id="squad">
-  <div class="section-label reveal">The Squad</div>
-  <h2 class="section-title reveal">Six Hearts, One Adventure</h2>
-  <p class="section-sub reveal">Every group has its roles. Here's who brings what to the table.</p>
+  <div class="section-label reveal">The Circle</div>
+  <h2 class="section-title reveal">Six Hearts, One Vision</h2>
+  <p class="section-sub reveal">Every circle has its soul. Here's who makes ours shine.</p>
 
   <div class="squad-grid">
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#7D2044,#5E1630)">01</div>
-      <div class="squad-role">The Planner</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#D4A574,#B8915C)">01</div>
+      <div class="squad-role">The Visionary</div>
       <div class="squad-name">Friend One</div>
-      <div class="squad-quote">"Someone has to know where we're going next."</div>
+      <div class="squad-quote">"Dreams don't chase themselves."</div>
     </div>
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#5A483C,#47362E)">02</div>
-      <div class="squad-role">The Photographer</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#2D5047,#3D7070)">02</div>
+      <div class="squad-role">The Storyteller</div>
       <div class="squad-name">Friend Two</div>
-      <div class="squad-quote">"If we don't have a photo, did it really happen?"</div>
+      <div class="squad-quote">"Every moment deserves to be remembered."</div>
     </div>
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#963A52,#7D2044)">03</div>
-      <div class="squad-role">The Mood Maker</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#C9966B,#A67A52)">03</div>
+      <div class="squad-role">The Heartbeat</div>
       <div class="squad-name">Friend Three</div>
-      <div class="squad-quote">"Keep the energy high, the jokes coming."</div>
+      <div class="squad-quote">"Energy is contagious—spread the good."</div>
     </div>
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#8A7A50,#6E6240)">04</div>
-      <div class="squad-role">The Foodie</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#4A6B6B,#2D5047)">04</div>
+      <div class="squad-role">The Curator</div>
       <div class="squad-name">Friend Four</div>
-      <div class="squad-quote">"New country, new flavors, new cravings."</div>
+      <div class="squad-quote">"Life is tasted, not just lived."</div>
     </div>
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#4A6050,#3A5040)">05</div>
-      <div class="squad-role">The Calm One</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#A67A52,#8B6141)">05</div>
+      <div class="squad-role">The Anchor</div>
       <div class="squad-name">Friend Five</div>
-      <div class="squad-quote">"I bring the calm, the hugs, and emergency snacks."</div>
+      <div class="squad-quote">"Grace through adventure."</div>
     </div>
     <div class="squad-card reveal">
-      <div class="squad-avatar" style="background:linear-gradient(135deg,#7D2044,#5A483C)">06</div>
-      <div class="squad-role">The Memory Keeper</div>
+      <div class="squad-avatar" style="background:linear-gradient(135deg,#3D7070,#2D5047)">06</div>
+      <div class="squad-role">The Keeper</div>
       <div class="squad-name">Friend Six</div>
-      <div class="squad-quote">"Years from now, we'll remember the little things."</div>
+      <div class="squad-quote">"The best souvenir is a shared memory."</div>
     </div>
   </div>
 </section>
@@ -343,7 +349,7 @@ button{font-family:var(--font-body);cursor:pointer}
 <section class="section" id="itinerary">
   <div class="section-label reveal">Day by Day</div>
   <h2 class="section-title reveal">Our Taipei Story</h2>
-  <p class="section-sub reveal">Six days, six adventures. Here's what we're living for.</p>
+  <p class="section-sub reveal">Six days, six experiences. Here's the journey.</p>
 
   <div class="itin-grid">
 
@@ -354,17 +360,17 @@ button{font-family:var(--font-body);cursor:pointer}
         <div class="itin-badge">Oct 20 ✈</div>
       </div>
       <div class="itin-body">
-        <h3>Manila → Taipei &amp; Shilin Night Market</h3>
+        <h3>Arrival & First Vibes</h3>
         <div class="itin-loc">📍 Taipei City</div>
         <ul class="itin-acts">
           <li>✈ Flight PR896 (12:35 PM) Manila to Taipei</li>
           <li>🏨 Hotel Check-in at EverStar</li>
-          <li>🍜 Shilin Night Market</li>
-          <li>📸 First group photo</li>
-          <li>🍻 Local eats &amp; night vibes</li>
+          <li>🍜 Shilin Night Market exploration</li>
+          <li>📸 First group photo moment</li>
+          <li>🍻 Local eats &amp; settling in</li>
         </ul>
-        <div class="itin-vibe">Vibe: Travel Chic · Comfy &amp; Cool</div>
-        <a href="https://maps.google.com/?q=Shilin+Night+Market+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 Shilin Night Market</a>
+        <div class="itin-vibe">Vibe: Travel Chic · Excitement Mode ON</div>
+        <a href="https://maps.google.com/?q=Shilin+Night+Market+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -372,19 +378,19 @@ button{font-family:var(--font-body);cursor:pointer}
     <div class="itin-card reveal vibe-casual">
       <div class="itin-img-wrap">
         <img src="national-palace-museum.jpg" alt="National Palace Museum" onerror="this.style.display='none'">
-        <div class="itin-badge">Oct 21 📍</div>
+        <div class="itin-badge">Oct 21 🏛</div>
       </div>
       <div class="itin-body">
-        <h3>Culture &amp; Museum Adventure</h3>
+        <h3>Culture & Heritage</h3>
         <div class="itin-loc">📍 Taipei City</div>
         <ul class="itin-acts">
-          <li>🏛 National Palace Museum exploration</li>
-          <li>🎨 Ancient Chinese art &amp; treasures</li>
-          <li>🍱 Lunch at nearby restaurants</li>
-          <li>⭐ Afternoon free time or shopping</li>
+          <li>🏛 National Palace Museum masterpieces</li>
+          <li>🎨 Ancient art &amp; Chinese treasures</li>
+          <li>🍱 Elegant lunch experience</li>
+          <li>⭐ Shopping or afternoon leisure</li>
         </ul>
-        <div class="itin-vibe">Vibe: Casual Chic · Sneakers &amp; Layers</div>
-        <a href="https://maps.google.com/?q=National+Palace+Museum+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 NPM Taipei</a>
+        <div class="itin-vibe">Vibe: Refined Elegance · Cultured Moments</div>
+        <a href="https://maps.google.com/?q=National+Palace+Museum+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -392,19 +398,19 @@ button{font-family:var(--font-body);cursor:pointer}
     <div class="itin-card reveal vibe-boho">
       <div class="itin-img-wrap">
         <img src="elephant-mountain-sunset.jpg" alt="Elephant Mountain" onerror="this.style.display='none'">
-        <div class="itin-badge">Oct 22 📍</div>
+        <div class="itin-badge">Oct 22 🌅</div>
       </div>
       <div class="itin-body">
-        <h3>Elephant Mountain &amp; Sunset Views</h3>
+        <h3>Summit & Sunset</h3>
         <div class="itin-loc">📍 Taipei City</div>
         <ul class="itin-acts">
-          <li>⛰ Elephant Mountain hiking trail</li>
-          <li>🌇 Taipei 101 &amp; city skyline views</li>
+          <li>⛰ Elephant Mountain scenic hike</li>
+          <li>🌇 Taipei 101 &amp; skyline vistas</li>
           <li>📸 Golden hour photography</li>
-          <li>🌅 Romantic sunset experience</li>
+          <li>🌅 Romantic sunset gathering</li>
         </ul>
-        <div class="itin-vibe">Vibe: Boho Chic · Comfortable Shoes</div>
-        <a href="https://maps.google.com/?q=Elephant+Mountain+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 Elephant Mountain</a>
+        <div class="itin-vibe">Vibe: Adventurous Spirit · Breathtaking Views</div>
+        <a href="https://maps.google.com/?q=Elephant+Mountain+Taipei" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -412,19 +418,19 @@ button{font-family:var(--font-body);cursor:pointer}
     <div class="itin-card reveal vibe-relaxed">
       <div class="itin-img-wrap">
         <img src="beitou-thermal-valley.jpg" alt="Beitou Hot Springs" onerror="this.style.display='none'">
-        <div class="itin-badge">Oct 23 📍</div>
+        <div class="itin-badge">Oct 23 ♨</div>
       </div>
       <div class="itin-body">
-        <h3>Beitou &amp; Tamsui</h3>
+        <h3>Spa & Tranquility</h3>
         <div class="itin-loc">📍 Taipei / New Taipei City</div>
         <ul class="itin-acts">
-          <li>♨ Beitou Hot Springs onsen</li>
-          <li>♨ Beitou Thermal Valley</li>
-          <li>⛵ Tamsui Old Street</li>
-          <li>🌅 Sunset by the river</li>
+          <li>♨ Beitou Hot Springs wellness</li>
+          <li>♨ Thermal Valley natural beauty</li>
+          <li>⛵ Tamsui riverside charm</li>
+          <li>🌅 Sunset by the water</li>
         </ul>
-        <div class="itin-vibe">Vibe: Relaxed &amp; Cozy · Swimwear / Light Layers</div>
-        <a href="https://maps.google.com/?q=Beitou+Thermal+Valley" target="_blank" rel="noopener" class="itin-btn">📍 Beitou Thermal Valley</a>
+        <div class="itin-vibe">Vibe: Relaxed Luxury · Self-Care Day</div>
+        <a href="https://maps.google.com/?q=Beitou+Thermal+Valley" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -432,19 +438,19 @@ button{font-family:var(--font-body);cursor:pointer}
     <div class="itin-card reveal vibe-sporty">
       <div class="itin-img-wrap">
         <img src="taipei-101-sunset.jpg" alt="Taipei 101 Sunset" onerror="this.style.display='none'">
-        <div class="itin-badge">Oct 24 📍</div>
+        <div class="itin-badge">Oct 24 🏙</div>
       </div>
       <div class="itin-body">
-        <h3>Skyline &amp; Sunset</h3>
+        <h3>Icons & Sky High</h3>
         <div class="itin-loc">📍 Taipei City</div>
         <ul class="itin-acts">
           <li>🏙 Taipei 101 Observatory (89th floor)</li>
-          <li>⛰ Elephant Mountain Hike</li>
-          <li>📸 City skyline &amp; sunset views</li>
+          <li>⛰ City views &amp; photo ops</li>
+          <li>📸 Skyline at golden hour</li>
           <li>🍢 Raohe Street Night Market</li>
         </ul>
-        <div class="itin-vibe">Vibe: Sporty Chic · Sneakers &amp; Light Jacket</div>
-        <a href="https://maps.google.com/?q=Taipei+101" target="_blank" rel="noopener" class="itin-btn">📍 Taipei 101</a>
+        <div class="itin-vibe">Vibe: Modern Chic · On Top of the World</div>
+        <a href="https://maps.google.com/?q=Taipei+101" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -455,16 +461,16 @@ button{font-family:var(--font-body);cursor:pointer}
         <div class="itin-badge">Oct 25 ✈</div>
       </div>
       <div class="itin-body">
-        <h3>Last Stops &amp; Farewell</h3>
+        <h3>Legacy & Farewell</h3>
         <div class="itin-loc">📍 Taipei City</div>
         <ul class="itin-acts">
           <li>🏛 Chiang Kai-shek Memorial Hall</li>
-          <li>🛍 Souvenir shopping</li>
-          <li>🥢 Taiwanese lunch &amp; last eats</li>
-          <li>✈ Flight PR895 (09:55 PM) Taipei to Manila</li>
+          <li>🛍 Final souvenir treasures</li>
+          <li>🥢 Taiwanese farewell feast</li>
+          <li>✈ Flight PR895 (09:55 PM) home</li>
         </ul>
-        <div class="itin-vibe">Vibe: Smart Casual · Comfortable Travel Look</div>
-        <a href="https://maps.google.com/?q=Chiang+Kai-shek+Memorial+Hall" target="_blank" rel="noopener" class="itin-btn">📍 CKS Memorial</a>
+        <div class="itin-vibe">Vibe: Grateful & Graceful · Memories Forever</div>
+        <a href="https://maps.google.com/?q=Chiang+Kai-shek+Memorial+Hall" target="_blank" rel="noopener" class="itin-btn">📍 Directions</a>
       </div>
     </div>
 
@@ -474,43 +480,43 @@ button{font-family:var(--font-body);cursor:pointer}
 <!-- ─── BUCKET LIST ─── -->
 <section class="check-section" id="bucketlist">
   <div class="section-label reveal">Dream Big</div>
-  <h2 class="section-title reveal" style="margin-bottom:28px">Trip Bucket List</h2>
+  <h2 class="section-title reveal" style="margin-bottom:32px">Trip Bucket List</h2>
 
   <div class="checklist reveal" id="bucketChecklist">
     <label class="check-item" data-key="bl-1">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Taipei 101 Observatory Sunset</span>
+      <span class="check-label">Taipei 101 Observatory Sunset Experience</span>
     </label>
     <label class="check-item" data-key="bl-2">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Elephant Mountain Golden Hour Photos</span>
+      <span class="check-label">Elephant Mountain Golden Hour Photography</span>
     </label>
     <label class="check-item" data-key="bl-3">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Shilin Night Market Street Food Feast</span>
+      <span class="check-label">Shilin Night Market Street Food Adventure</span>
     </label>
     <label class="check-item" data-key="bl-4">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Beitou Thermal Valley Walk</span>
+      <span class="check-label">Beitou Thermal Valley Wellness Retreat</span>
     </label>
     <label class="check-item" data-key="bl-5">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Tamsui Riverside Stroll</span>
+      <span class="check-label">Tamsui Riverside Stroll at Twilight</span>
     </label>
     <label class="check-item" data-key="bl-6">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">National Palace Museum Culture Dive</span>
+      <span class="check-label">National Palace Museum Culture Deep Dive</span>
     </label>
     <label class="check-item" data-key="bl-7">
       <input type="checkbox" class="check-input">
       <span class="check-box"><svg viewBox="0 0 16 16"><polyline points="3.5 8 7 11.5 12.5 5"/></svg></span>
-      <span class="check-label">Authentic Taiwanese Boba &amp; Dumplings</span>
+      <span class="check-label">Authentic Taiwanese Boba &amp; Dumpling Tasting</span>
     </label>
     <label class="check-item" data-key="bl-8">
       <input type="checkbox" class="check-input">
@@ -523,7 +529,7 @@ button{font-family:var(--font-body);cursor:pointer}
 <!-- ─── ESSENTIAL CHECKLIST ─── -->
 <section class="check-section" id="checklist">
   <div class="section-label reveal">Stay Ready</div>
-  <h2 class="section-title reveal" style="margin-bottom:24px">Essential Travel Checklist</h2>
+  <h2 class="section-title reveal" style="margin-bottom:28px">Essential Travel Checklist</h2>
 
   <div class="reveal">
     <button class="accordion-toggle" id="accToggle" aria-expanded="false">
@@ -584,8 +590,8 @@ button{font-family:var(--font-body);cursor:pointer}
 
 <!-- ─── FOOTER ─── -->
 <footer class="footer">
-  <div class="footer-hearts">♥ ♥ ♥ ♥ ♥ ♥</div>
-  <div class="footer-text">From Manila with love, into the world together.<br>Six Hearts, One Horizon · Taipei 2026</div>
+  <div class="footer-hearts">✨ ♥ ✨ ♥ ✨ ♥ ✨</div>
+  <div class="footer-text">From Manila with Pride. Into the World Together.<br>Six Hearts. One Horizon. Taipei 2026</div>
 </footer>
 
 <script>
