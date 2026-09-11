@@ -6,7 +6,7 @@
 <title>Six Hearts · Taipei 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -27,7 +27,7 @@ a{color:var(--accent);text-decoration:none}
 button{font-family:var(--font-body);cursor:pointer}
 
 /* ── NAVBAR ── */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,253,251,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light);transition:box-shadow .3s;box-shadow:0 2px 16px rgba(45,80,71,.06)}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(254,253,251,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light);height:72px;transition:box-shadow .25s}
 .navbar.scrolled{box-shadow:0 4px 28px rgba(45,80,71,.15)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav-logo{font-family:var(--font-display);font-size:.95rem;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase;white-space:nowrap;font-weight:600}
@@ -45,13 +45,13 @@ button{font-family:var(--font-body);cursor:pointer}
 
 /* ── HERO ── */
 .hero{padding:160px 24px 80px;text-align:center;max-width:900px;margin:0 auto}
-.hero-badge{display:inline-block;padding:10px 24px;border:1.5px solid var(--primary);border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:28px;background:rgba(212,165,116,.04)}
+.hero-badge{display:inline-block;padding:10px 24px;border:1.5px solid var(--primary);border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary)}
 .hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,4.2rem);color:var(--accent);line-height:1.15;margin-bottom:18px;text-wrap:balance;font-weight:700}
 .hero-sub{font-size:1.1rem;color:var(--text-light);font-weight:300;line-height:1.8;max-width:620px;margin:0 auto 48px;letter-spacing:.3px}
 
 /* countdown */
 .countdown{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.cd-box{background:linear-gradient(135deg,rgba(212,165,116,.08),rgba(61,112,112,.04));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:20px 28px;min-width:110px;box-shadow:0 8px 28px rgba(212,165,116,.1)}
+.cd-box{background:linear-gradient(135deg,rgba(212,165,116,.08),rgba(61,112,112,.04));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:16px;padding:24px 32px;min-width:110px;box-shadow:var(--shadow-sm)}
 .cd-num{font-family:var(--font-display);font-size:2.4rem;color:var(--primary);line-height:1;font-weight:700}
 .cd-label{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-light);margin-top:10px;font-weight:700}
 
@@ -67,7 +67,7 @@ button{font-family:var(--font-body);cursor:pointer}
 .story-label{font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--primary);font-weight:800;margin-bottom:12px}
 .story-subtitle{font-family:var(--font-display);font-size:1.5rem;color:var(--accent);margin-bottom:18px;font-style:italic;line-height:1.35;font-weight:600}
 .story-text{color:var(--text-light);font-size:.95rem;line-height:1.9;font-weight:300}
-.story-quote{border-left:4px solid var(--primary);padding:20px 28px;margin:28px 0;font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:var(--accent);line-height:1.6;background:rgba(212,165,116,.05);border-radius:0 12px 12px 0}
+.story-quote{border-left:4px solid var(--primary);padding:20px 28px;margin:28px 0;font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:var(--accent);line-height:1.6;background:var(--accent-soft);border-radius:var(--radius)}
 
 /* stats */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
@@ -77,17 +77,20 @@ button{font-family:var(--font-body);cursor:pointer}
 .stat-text{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-top:8px;font-weight:700}
 
 /* ── FLIGHT & BUDGET ── */
-.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;padding:100px 24px;max-width:1100px;margin:0 auto}
-.info-card{background:linear-gradient(135deg,var(--card),rgba(61,112,112,.02));border:1px solid var(--border);border-radius:var(--radius);padding:clamp(28px,4vw,44px);box-shadow:var(--shadow-sm)}
+.two-col{display:grid;grid-template-columns:1fr;gap:28px;padding:100px 24px;max-width:800px;margin:0 auto}
+.info-card{border-radius:var(--radius);padding:clamp(28px,4vw,44px);box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.info-card:nth-child(1){background:linear-gradient(135deg,#F5E8D8,#FBF3E6);border:1.5px solid #E8D5C4}
+.info-card:nth-child(2){background:linear-gradient(135deg,#D4E8E8,#E8F4F4);border:1.5px solid #B8D9D9}
 .info-card h3{font-family:var(--font-display);font-size:1.4rem;margin-bottom:24px;color:var(--accent);font-weight:700}
 .info-card ul{list-style:none;padding:0}
-.info-card li{padding:14px 0;border-bottom:1px solid var(--border-light);font-size:.88rem;color:var(--text-light);display:flex;gap:12px;align-items:flex-start;line-height:1.7}
+.info-card li{padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:.88rem;color:var(--text-light);display:flex;gap:12px;align-items:flex-start;line-height:1.7}
 .info-card li:last-child{border:none}
 .info-card li strong{color:var(--primary);font-weight:700;min-width:fit-content;text-transform:uppercase;letter-spacing:.4px;font-size:.78rem}
-.time-chip{display:inline-block;padding:3px 12px;border-radius:6px;background:rgba(212,165,116,.12);color:var(--primary);font-weight:700;font-size:.75rem;letter-spacing:.6px}
+.time-chip{display:inline-block;padding:4px 12px;border-radius:6px;background:rgba(212,165,116,.15);color:var(--primary);font-weight:700;font-size:.75rem;letter-spacing:.6px;border:1px solid rgba(212,165,116,.3)}
 .time-stamp{font-weight:600;color:var(--accent);font-size:.92rem;letter-spacing:.3px}
 .time-meta{display:block;color:var(--text-light);font-size:.8rem;margin-top:4px;letter-spacing:.2px;line-height:1.6;font-weight:400}
-.budget-total{margin-top:20px;padding:18px 24px;background:linear-gradient(135deg,rgba(212,165,116,.08),rgba(61,112,112,.04));border-radius:12px;border:1px solid var(--primary)}
+.budget-total{margin-top:20px;padding:18px 24px;background:rgba(212,165,116,.12);border-radius:12px;border:1.5px solid var(--primary)}
 .budget-total span{font-weight:800;color:var(--primary);font-size:1.1rem;letter-spacing:.3px}
 
 /* lottery banner */
@@ -97,14 +100,14 @@ button{font-family:var(--font-body);cursor:pointer}
 .lottery-inner::after{content:'';position:absolute;bottom:-50px;left:-50px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%}
 .lottery-inner h3{font-family:var(--font-display);font-size:1.5rem;margin-bottom:12px;position:relative;z-index:1;font-weight:700}
 .lottery-inner p{font-size:.92rem;opacity:.94;max-width:640px;line-height:1.8;margin-bottom:24px;position:relative;z-index:1}
-.lottery-btn{display:inline-block;padding:13px 32px;background:#fff;color:var(--accent);font-weight:700;font-size:.85rem;border-radius:100px;letter-spacing:.6px;transition:transform .25s,box-shadow .25s;position:relative;z-index:1}
+.lottery-btn{display:inline-block;padding:13px 32px;background:#fff;color:var(--accent);font-weight:700;font-size:.85rem;border-radius:100px;letter-spacing:.6px;transition:transform .25s,box-shadow .25s}
 .lottery-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 /* ── SQUAD ── */
 .squad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .squad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 26px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
 .squad-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.squad-avatar{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-family:var(--font-display);color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(45,80,71,.15)}
+.squad-avatar{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-family:var(--font-display);color:#fff;font-weight:700}
 .squad-role{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--primary);font-weight:800;margin-bottom:6px}
 .squad-name{font-family:var(--font-display);font-size:1.15rem;margin-bottom:10px;color:var(--accent);font-weight:700}
 .squad-quote{font-size:.82rem;color:var(--text-light);font-style:italic;line-height:1.65;font-weight:300}
@@ -113,11 +116,11 @@ button{font-family:var(--font-body);cursor:pointer}
 .itin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .itin-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
 .itin-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.itin-img-wrap{position:relative;overflow:hidden;height:220px;background:linear-gradient(135deg,var(--border),#E8D5C4);transform:scale(1) rotate(0deg);transform-origin:center;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.itin-img-wrap{position:relative;overflow:hidden;height:220px;background:linear-gradient(135deg,var(--border),#E8D5C4);transform:scale(1) rotate(0deg);transform-origin:center;transition:transform .5s ease}
 .itin-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
 .itin-card:hover .itin-img-wrap{transform:scale(1.05) rotate(-.4deg)}
 .itin-card:hover .itin-img-wrap img{transform:scale(1.08)}
-.itin-badge{position:absolute;top:14px;left:14px;background:var(--primary);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:1.2px;padding:6px 14px;border-radius:100px;text-transform:uppercase;box-shadow:0 4px 12px rgba(212,165,116,.3)}
+.itin-badge{position:absolute;top:14px;left:14px;background:var(--primary);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:1.2px;padding:6px 14px;border-radius:100px;text-transform:uppercase}
 .itin-body{padding:26px}
 .itin-body h3{font-family:var(--font-display);font-size:1.25rem;margin-bottom:6px;line-height:1.3;text-wrap:balance;color:var(--accent);font-weight:700}
 .itin-loc{font-size:.8rem;color:var(--text-light);margin-bottom:14px;font-weight:600;letter-spacing:.3px}
@@ -143,7 +146,7 @@ button{font-family:var(--font-body);cursor:pointer}
 .check-item:hover{opacity:.8}
 .check-item:last-child{border:none}
 .check-input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
-.check-box{width:24px;height:24px;min-width:24px;border:2px solid var(--primary);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .15s}
+.check-box{width:24px;height:24px;min-width:24px;border:2px solid var(--primary);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s}
 .check-input:checked + .check-box{background:var(--primary);border-color:var(--primary);transform:scale(1.05)}
 .check-box svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none;opacity:0;transition:opacity .25s}
 .check-input:checked + .check-box svg{opacity:1}
@@ -152,7 +155,8 @@ button{font-family:var(--font-body);cursor:pointer}
 .check-input:focus-visible + .check-box{box-shadow:0 0 0 3px rgba(212,165,116,.3)}
 
 /* accordion */
-.accordion-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 28px;cursor:pointer;box-shadow:var(--shadow-sm);transition:box-shadow .3s;font-family:var(--font-display)}
+.accordion-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 28px;cursor:pointer;transition:background .25s,border-color .25s}
+.accordion-toggle:hover{background:#FFFCF9}
 .accordion-toggle h3{font-size:1.2rem;color:var(--accent);font-weight:700}
 .accordion-arrow{width:24px;height:24px;transition:transform .35s;color:var(--primary)}
 .accordion-toggle.open .accordion-arrow{transform:rotate(180deg)}
@@ -233,14 +237,14 @@ button{font-family:var(--font-body);cursor:pointer}
   <div class="story-card reveal">
     <div class="story-label">A Moment We'll Treasure Forever</div>
     <div class="story-subtitle">Six Hearts. One Adventure. A World of Memories.</div>
-    <p class="story-text">Six women. Six dreams. One unforgettable journey. From the moment we step off that plane to the final sunset over the city, this isn't just a trip—it's a testament to the bond we share. In a world that moves fast, we're choosing to be present, celebrate each other, and create moments that'll echo for years to come.</p>
+    <p class="story-text">Six women. Six dreams. One unforgettable journey. From the moment we step off that plane to the final sunset over the city, this isn't just a trip—it's a testament to the power of friendship and the beauty of shared adventure.</p>
   </div>
 
   <!-- Part B -->
   <div class="story-card reveal">
     <div class="story-label">First Passports, First Flight, First Class</div>
     <div class="story-quote">"Traveling with your sisters in spirit means every moment becomes a masterpiece."</div>
-    <p class="story-text">For the first time, six familiar souls are stepping into an unfamiliar world—together. And there's something magical about that. With each other's company, we transform the unfamiliar into the unforgettable.</p>
+    <p class="story-text">For the first time, six familiar souls are stepping into an unfamiliar world—together. And there's something magical about that. With each other's company, we transform ordinary moments into extraordinary memories.</p>
   </div>
 
   <!-- Stats -->
@@ -270,8 +274,8 @@ button{font-family:var(--font-body);cursor:pointer}
   <div class="info-card reveal">
     <h3>✈ Flight Details (Manila ⇄ Taipei)</h3>
     <ul>
-      <li><strong>Outbound</strong> · <span class="time-chip">PR896</span> · <span class="time-stamp">12:35 PM → 03:05 PM</span><br><span class="time-meta">Manila (MNL) → Taipei (TPE) · Oct 20, 2026</span></li>
-      <li><strong>Return</strong> · <span class="time-chip">PR895</span> · <span class="time-stamp">09:55 PM → 12:20 AM (+1)</span><br><span class="time-meta">Taipei (TPE) → Manila (MNL) · Oct 25, 2026</span></li>
+      <li><strong>Outbound</strong> · <span class="time-chip">PR896</span> · <span class="time-stamp">12:35 PM → 03:05 PM</span><br><span class="time-meta">Manila (MNL) → Taipei (TPE) · October 20, 2026 (Tuesday)</span></li>
+      <li><strong>Return</strong> · <span class="time-chip">PR895</span> · <span class="time-stamp">09:55 PM → 12:20 AM (+1)</span><br><span class="time-meta">Taipei (TPE) → Manila (MNL) · October 25, 2026 (Sunday) arriving Oct 26</span></li>
       <li><strong>Airline</strong> Philippine Airlines (PAL)</li>
       <li><strong>Note</strong> Baggage allowance (20kg) &amp; PH Travel Tax (₱1,620) pre-paid or paid at airport</li>
     </ul>
